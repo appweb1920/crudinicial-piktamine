@@ -10,7 +10,8 @@
         <input type="hidden" name="id" value="{{$dato->id}}">
         <input type="text" name="direccion" value="{{$dato->direccion}}"> <br><br>
         <b>Tipo de basura:</b> <br><br>
-        <select name="tipo" value="{{ $dato->tipodebasura }}">
+        <select name="tipo">
+            <option selected value="{{ $dato->tipodebasura }}">{{ $dato->tipodebasura }}</option>
             <option value="Organica">Organica</option>
             <option value="Metales">Metales</option>
             <option value="Papel y carton">Papel y carton</option>
