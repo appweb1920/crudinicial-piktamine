@@ -23,4 +23,11 @@ class ControladorGeneral extends Controller
         
         return view('relacion')->with('datos',$datos)->with('rec',$rec)->with('pr',$pr);//mostrar relacion
     }
+    public function eliminar($id){
+        
+        $dato=detallesfk::find($id);
+        $dato->delete();
+        
+        return back();
+    }
 }

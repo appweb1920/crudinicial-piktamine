@@ -3,12 +3,12 @@
 
 <h1>Recolectores</h1><br>
 
-<div class="jumbotron mt-3 col-4">
+<div class="jumbotron mx-auto" style="width:50%;">
 <h3>Dar de alta:</h3><br>
 <form action="{{ route('r-submit') }}" method="post">
     @csrf
-        <b>Nombre:</b><br>
-        <input type="text" name="nombre"> <br><br>
+        <b>Nombre:</b><br><br>
+        <input type="text" name="nombre" size="25"> <br><br>
         <b>Dias de recoleccion:</b> <br><br>
         
         {{-- INICIO CHECKBOX --}}
@@ -29,7 +29,7 @@
         <label for="domingo">Domingo</label><br><br>
         {{-- FIN CHECKBOX--}}
         
-        <input type="submit" value="Enviar">
+        <button type="submit" class="btn btn-outline-primary">Agregar recolector</button>
 </form>
 </div>
 <br>
@@ -74,7 +74,15 @@
                 domingo
             @endif
           </td>
-          <td> <a href="/Recolectores/editar/{{ $d->id }}"> Editar </a> <a href="/Recolectores/elimina/{{ $d->id}}">Borrar</a> </td>
+          <td> <a href="/Recolectores/editar/{{ $d->id }}"> 
+          <button class="btn btn-outline-warning">
+          Editar
+          </button>
+          </a> <a href="/Recolectores/elimina/{{ $d->id}}">
+          <button class="btn btn-outline-danger">
+          Borrar
+          </button>
+          </a> </td>
         </tr>
     @endforeach
   </tbody>

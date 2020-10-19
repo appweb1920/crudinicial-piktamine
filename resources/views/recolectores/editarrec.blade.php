@@ -51,7 +51,7 @@
         <label for="domingo">Domingo</label><br><br>
         {{-- FIN CHECKBOX--}}
         
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Terminar edicion">
 </form>
 </div>
 @endsection

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class MRecolectores extends Model
 {
-    use HasFactory;
+    use HasFactory;//
+    
 }

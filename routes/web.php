@@ -36,3 +36,5 @@ Route::post('/PuntosReciclaje/submitrel',[CpuntosReciclaje::class,'submitrel'])-
 
 //Relacion
 Route::get('/DetallesRelaciones',[ControladorGeneral::class,'inicio'])->name('r-det');//
+
+Route::get('/DetallesRelaciones/eliminar/{id}',[ControladorGeneral::class,'eliminar'])->name('r-deteli');

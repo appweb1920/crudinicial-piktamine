@@ -12,6 +12,7 @@
       <th scope="col">Recolector</th>
       <th scope="col">id del Punto</th>
       <th scope="col">Punto de recoleccion</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -34,12 +35,19 @@
           @endif
           @endforeach
           </td>
+          <td>
+            <a href="/DetallesRelaciones/eliminar/{{ $d->id}}">
+          <button class="btn btn-outline-danger">
+          Borrar
+          </button>
+          </a>
+          </td>
         </tr>
     @endforeach
   </tbody>
 </table>
 
-<a href="{{ route('r-rec') }}">Recolectores</a>
+<a href="{{ route('r-rec') }}">Recolectores - </a>
 <a href="{{ route('r-pr') }}">Puntos de recoleccion</a><br>
 
 @endsection

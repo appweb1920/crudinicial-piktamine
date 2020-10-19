@@ -4,12 +4,13 @@
 <h1>Puntos de recoleccion</h1><br>
 
 <br>
+<div class="jumbotron mx-auto" style="width:50%;">
 <h2>Registrar punto:</h2>
 <form action="{{ route('r-submitpr') }}" method="post">
     @csrf
-        Direccion:<br>
+        Direccion:<br><br>
         <input type="text" name="direccion" size='30'> <br><br>
-        Tipo de basura: <br>
+        Tipo de basura: <br><br>
         <select name="tipo">
             <option value="Organica">Organica</option>
             <option value="Metales">Metales</option>
@@ -23,17 +24,20 @@
             <option value="Otro">Otro</option>
         </select><br><br>
         
-        Hora de Apertura: <br>
+        Hora de Apertura: <br><br>
         <input type="time" name="ha"><br><br>
         
-        Hora de cierre: <br>
+        Hora de cierre: <br><br>
         <input type="time" name="hc">
         
-        <br><br>
-        <input type="submit" value="Enviar"><br>
+        <br><br><br>
+        <button type="submit" class="btn btn-outline-primary">Registrar punto</button><br>
         
-</form><br>
+</form>
+</div><br><br>
 
+
+<div class="jumbotron mx-auto" style="width:50%;">
 <h2>Asignar un recolector:</h2><br><br>
 
 <form action="{{ route('r-submitrel') }}" method="post">
@@ -43,16 +47,18 @@
        @foreach($rec as $r)
         <option value="{{$r->id}}">{{$r->nombre}}</option>
        @endforeach
-    </select>
+    </select><br><br>
     Para la dirreccion: 
     <select name="pr">
         @foreach($datos as $pr)
         <option value="{{$pr->id}}">{{$pr->direccion}}</option>
        @endforeach
     </select>
-    <br><br>
-    <input type="submit" value="Asignar punto">
-</form><br>
+    <br><br><br>
+    <button type="submit" class="btn btn-outline-primary">Asignar punto</button>
+    
+</form>
+</div><br><br>
 
 <h2>Datos:</h2><br>
 
@@ -76,7 +82,15 @@
           <td> {{$d->tipodebasura}} </td>
           <td> {{$d->horaapertura}} </td>
           <td> {{$d->horacierre}} </td>
-          <td> <a href="#{{--/PuntosReciclaje/editar/{{ $d->id }}--}}"> Editar </a> <a href="/PuntosReciclaje/elimina/{{ $d->id}}">Borrar</a> </td>
+          <td> <a href="#{{--/PuntosReciclaje/editar/{{ $d->id }}--}}">
+          <button class="btn btn-outline-warning"> 
+          Editar 
+          </button>
+          </a> <a href="/PuntosReciclaje/elimina/{{ $d->id}}">
+          <button class="btn btn-outline-danger">
+          Borrar
+          </button>
+          </a> </td>
         </tr>
     @endforeach
   </tbody>
