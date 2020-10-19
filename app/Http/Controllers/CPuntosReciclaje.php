@@ -34,12 +34,29 @@ class CPuntosReciclaje extends Controller
     public function editar($id){
         
         //buscar el dato
-        
         $dato=MPR::find($id);
     
         //pasar el dato a la vista
         //return (22);
-        return view('PuntosReciclaje/editarrec')->with('dato',$dato);
+        return view('pr/editapr')->with('dato',$dato);
+    }
+    
+    public function guardaredicion(Request $request){
+        
+        $datosnuevos=MPR::find($request->id);
+        //$datosnuevos = new MPR; 
+        if(!is_null($datosnuevos)){
+        
+        $datosnuevos->direccion = $request->direccion;
+        $datosnuevos->tipodebasura = $request->tipo;
+        $datosnuevos->horaapertura= $request->ha;
+        $datosnuevos->horacierre= $request->hc;
+        
+        $datosnuevos->save();
+            
+        }
+        
+        return redirect(route('r-pr'));
     }
     
     public function eliminar($id){

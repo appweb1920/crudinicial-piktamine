@@ -26,11 +26,11 @@ Route::get('/PuntosReciclaje',[CpuntosReciclaje::class,'inicio'])->name('r-pr');
 
 Route::post('/PuntosReciclaje/submit',[CpuntosReciclaje::class,'submit'])->name('r-submitpr');//
 
-Route::get('/PuntosReciclaje/editar/{id}',[CpuntosReciclaje::class,'editar'])->name('r-editaRpr');
+Route::get('/PuntosReciclaje/editar/{id}',[CpuntosReciclaje::class,'editar'])->name('r-editapr');
 
 Route::get('/PuntosReciclaje/elimina/{id}',[CpuntosReciclaje::class,'eliminar'])->name('r-eliminaRpr');
 
-Route::post('/PuntosReciclaje/guardaredicion',[CpuntosReciclaje::class,'guardaredicion'])->name('r-guardarRpr');
+Route::post('/PuntosReciclaje/guardaredicion',[CpuntosReciclaje::class,'guardaredicion'])->name('r-guardarpr');
 
 Route::post('/PuntosReciclaje/submitrel',[CpuntosReciclaje::class,'submitrel'])->name('r-submitrel');//
 

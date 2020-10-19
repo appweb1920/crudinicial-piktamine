@@ -82,7 +82,7 @@
           <td> {{$d->tipodebasura}} </td>
           <td> {{$d->horaapertura}} </td>
           <td> {{$d->horacierre}} </td>
-          <td> <a href="#{{--/PuntosReciclaje/editar/{{ $d->id }}--}}">
+          <td> <a href="/PuntosReciclaje/editar/{{ $d->id }}">
           <button class="btn btn-outline-warning"> 
           Editar 
           </button>
