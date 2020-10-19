@@ -5,6 +5,6 @@
 
 <a href="{{ route('r-rec') }}">Recolectores</a><br>
 <a href="{{ route('r-pr') }}">Puntos de recoleccion</a><br>
-<a href="#">mostrar todos los datos</a><br>
+<a href="{{ route('r-det') }}">mostrar todos los datos</a><br>
 
 @endsection

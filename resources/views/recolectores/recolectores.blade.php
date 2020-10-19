@@ -3,7 +3,8 @@
 
 <h1>Recolectores</h1><br>
 
-<h3>Dar de alta:</h3>
+<div class="jumbotron mt-3 col-4">
+<h3>Dar de alta:</h3><br>
 <form action="{{ route('r-submit') }}" method="post">
     @csrf
         <b>Nombre:</b><br>
@@ -30,7 +31,7 @@
         
         <input type="submit" value="Enviar">
 </form>
-
+</div>
 <br>
 
 <h3>Todos los recolectores:</h3><br>

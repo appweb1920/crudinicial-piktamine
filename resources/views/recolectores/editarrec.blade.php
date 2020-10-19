@@ -3,9 +3,11 @@
 
 <h1>Puntos de recoleccion</h1><br>
 
-<form action="{{ route('r-submit') }}" method="post">
+<div class="jumbotron mt-3">
+<form action="{{ route('r-guardarR') }}" method="post">
     @csrf
         <b>Nombre:</b><br>
+        <input type="hidden" name="id" value="{{$dato->id}}">
         <input type="text" name="nombre" value="{{$dato->nombre}}"> <br><br>
         <b>Dias de recoleccion:</b> <br><br>
         
@@ -51,5 +53,5 @@
         
         <input type="submit" value="Enviar">
 </form>
-
+</div>
 @endsection
