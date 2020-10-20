@@ -60,8 +60,12 @@
 </form>
 </div><br><br>
 
-<h2>Datos:</h2><br>
+<button class="btn btn-outline-secondary btn-sm" id="hide">Ocultar Datos</button>
+<button class=" btn btn-outline-secondary btn-sm" id="show">Mostrar Datos</button>
+<br><br>
 
+<div id="tabla">
+<h2>Datos:</h2><br>
 
 <table class="table">
   <thead>
@@ -95,5 +99,9 @@
     @endforeach
   </tbody>
 </table>
+</div>
+
+<a href="{{ route('r-rec') }}">Recolectores - </a>
+<a href="{{ route('r-det') }}">Recolectores con sus puntos de recoleccion</a><br>
 
 @endsection

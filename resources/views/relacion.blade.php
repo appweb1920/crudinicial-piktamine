@@ -3,7 +3,11 @@
 
 <h1>Recoleccion de basura</h1><br>
 
+<button class="btn btn-outline-secondary btn-sm" id="hide">Ocultar Datos</button>
+<button class=" btn btn-outline-secondary btn-sm" id="show">Mostrar Datos</button>
+<br><br>
 
+<div id="tabla">
 <table class="table">
   <thead>
     <tr>
@@ -46,6 +50,7 @@
     @endforeach
   </tbody>
 </table>
+</div>
 
 <a href="{{ route('r-rec') }}">Recolectores - </a>
 <a href="{{ route('r-pr') }}">Puntos de recoleccion</a><br>

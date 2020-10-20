@@ -34,6 +34,10 @@
 </div>
 <br>
 
+<button class="btn btn-outline-secondary btn-sm" id="hide">Ocultar Datos</button>
+<button class=" btn btn-outline-secondary btn-sm" id="show">Mostrar Datos</button>
+<br><br>
+<div id="tabla">
 <h3>Todos los recolectores:</h3><br>
 
 <table class="table">
@@ -87,5 +91,9 @@
     @endforeach
   </tbody>
 </table>
+</div>
+
+<a href="{{ route('r-pr') }}">Puntos de recoleccion - </a><br>
+<a href="{{ route('r-det') }}">Recolectores con sus puntos de recoleccion</a>
 
 @endsection

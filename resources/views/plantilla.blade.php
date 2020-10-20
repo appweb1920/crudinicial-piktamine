@@ -10,8 +10,25 @@
 
 <script src="https://kit.fontawesome.com/a22a55698a.js" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#tabla").hide();
+  });
+  $("#show").click(function(){
+    $("#tabla").show();
+  });
+});
+</script>
+
 </head>
 <style>
+    body{
+        background-color: #F8F8FF;
+    }
     a{
         color:gray;
     }
