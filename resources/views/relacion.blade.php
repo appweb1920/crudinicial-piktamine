@@ -40,11 +40,23 @@
           @endforeach
           </td>
           <td>
-            <a href="/DetallesRelaciones/eliminar/{{ $d->id}}">
+           
+          @if(auth()->user()->email=="admin@admin")
+          <a href="/DetallesRelaciones/eliminar/{{ $d->id}}">
           <button class="btn btn-outline-danger">
           Borrar
           </button>
           </a>
+          
+          @else
+          <a href="#">
+          <button class="btn btn-outline-link" disabled="yes">
+          Borrar
+          </button>
+          </a>
+          
+          @endif
+          
           </td>
         </tr>
     @endforeach

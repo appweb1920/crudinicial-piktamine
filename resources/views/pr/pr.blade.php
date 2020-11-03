@@ -4,6 +4,8 @@
 <h1>Puntos de recoleccion</h1><br>
 
 <br>
+
+@if(auth()->user()->email=="admin@admin")
 <div class="jumbotron mx-auto" style="width:50%;">
 <h2>Registrar punto:</h2>
 <form action="{{ route('r-submitpr') }}" method="post">
@@ -35,8 +37,9 @@
         
 </form>
 </div><br><br>
+@endif
 
-
+@if(auth()->user()->email=="admin@admin")
 <div class="jumbotron mx-auto" style="width:50%;">
 <h2>Asignar un recolector:</h2><br><br>
 
@@ -58,7 +61,10 @@
     <button type="submit" class="btn btn-outline-primary">Asignar punto</button>
     
 </form>
-</div><br><br>
+</div>
+@endif
+
+<br><br>
 
 <button class="btn btn-outline-secondary btn-sm" id="hide">Ocultar Datos</button>
 <button class=" btn btn-outline-secondary btn-sm" id="show">Mostrar Datos</button>
@@ -86,15 +92,38 @@
           <td> {{$d->tipodebasura}} </td>
           <td> {{$d->horaapertura}} </td>
           <td> {{$d->horacierre}} </td>
-          <td> <a href="/PuntosReciclaje/editar/{{ $d->id }}">
+          <td>
+          @if(auth()->user()->email=="admin@admin") 
+          <a href="/PuntosReciclaje/editar/{{ $d->id }}">
           <button class="btn btn-outline-warning"> 
           Editar 
           </button>
-          </a> <a href="/PuntosReciclaje/elimina/{{ $d->id}}">
+          </a>
+          @else
+          <a href="#">
+          <button class="btn btn-outline-link" disabled="yes"> 
+          Editar 
+          </button>
+          </a>
+          @endif
+          
+          @if(auth()->user()->email=="admin@admin") 
+          <a href="/PuntosReciclaje/elimina/{{ $d->id}}">
           <button class="btn btn-outline-danger">
           Borrar
           </button>
-          </a> </td>
+          </a>
+          @else
+          
+          <a href="#">
+          <button class="btn btn-outline-link" disabled="yes">
+          Borrar
+          </button>
+          </a>
+          
+          @endif 
+          
+          </td>
         </tr>
     @endforeach
   </tbody>

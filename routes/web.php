@@ -38,3 +38,11 @@ Route::post('/PuntosReciclaje/submitrel',[CpuntosReciclaje::class,'submitrel'])-
 Route::get('/DetallesRelaciones',[ControladorGeneral::class,'inicio'])->name('r-det');//
 
 Route::get('/DetallesRelaciones/eliminar/{id}',[ControladorGeneral::class,'eliminar'])->name('r-deteli');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

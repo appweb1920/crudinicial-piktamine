@@ -54,8 +54,8 @@ class CreateDetallesfksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_recolectores');
-        Schema::dropIfExists('detallesfks');
-        Schema::dropIfExists('m_p_r_s');
+        //Schema::dropIfExists('m_recolectores');
+        //Schema::dropIfExists('detallesfks');
+        //Schema::dropIfExists('m_p_r_s');
     }
 }

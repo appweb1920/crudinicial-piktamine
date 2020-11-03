@@ -3,6 +3,7 @@
 
 <h1>Recolectores</h1><br>
 
+@if(auth()->user()->email=="admin@admin")
 <div class="jumbotron mx-auto" style="width:50%;">
 <h3>Dar de alta:</h3><br>
 <form action="{{ route('r-submit') }}" method="post">
@@ -32,6 +33,8 @@
         <button type="submit" class="btn btn-outline-primary">Agregar recolector</button>
 </form>
 </div>
+@endif
+
 <br>
 
 <button class="btn btn-outline-secondary btn-sm" id="hide">Ocultar Datos</button>
@@ -78,15 +81,41 @@
                 domingo
             @endif
           </td>
-          <td> <a href="/Recolectores/editar/{{ $d->id }}"> 
+          <td> 
+          
+          @if(auth()->user()->email=="admin@admin")
+          <a href="/Recolectores/editar/{{ $d->id }}"> 
           <button class="btn btn-outline-warning">
           Editar
           </button>
-          </a> <a href="/Recolectores/elimina/{{ $d->id}}">
+          </a> 
+          @else
+          
+          <a href="#"> 
+          <button class="btn btn-outline-warning" disabled="yes">
+          Editar
+          </button>
+          </a> 
+          
+          @endif
+          
+          @if(auth()->user()->email=="admin@admin")
+          <a href="/Recolectores/elimina/{{ $d->id}}">
           <button class="btn btn-outline-danger">
           Borrar
           </button>
-          </a> </td>
+          </a> 
+          @else
+          
+          <a href="#">
+          <button class="btn btn-outline-link" disabled="yes">
+          Borrar
+          </button>
+          </a> 
+          
+          @endif
+          
+          </td>
         </tr>
     @endforeach
   </tbody>

@@ -9,6 +9,10 @@ use App\Models\detallesfk;
 
 class ControladorGeneral extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index (){
         return view('index');
