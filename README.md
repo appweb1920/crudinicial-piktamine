@@ -9,5 +9,5 @@ Porfavor no olvidar ejecutar los siguientes comandos:
 - php artisan db:seed
 
 Usuario administrador:
-    admin@admin
-    pass:1-8
+- admin@admin
+- pass:1-8
